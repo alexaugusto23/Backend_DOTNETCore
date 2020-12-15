@@ -9,7 +9,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace curso.api
@@ -30,7 +32,9 @@ namespace curso.api
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                var xmFile = $"{}"
+                var xmFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
@@ -40,8 +44,6 @@ namespace curso.api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "curso.api v1"));
             }
 
             app.UseHttpsRedirection();
@@ -53,6 +55,13 @@ namespace curso.api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "curso.api v1");
+            c.RoutePrefix = string.Empty; //swagger 
             });
         }
     }
