@@ -36,3 +36,4 @@ C:\git\Backend_DOTNETCore\curso\curso.api\obj\Debug\net5.0\ref\curso.api.dll
 C:\git\Backend_DOTNETCore\curso\curso.api\obj\Debug\net5.0\curso.api.pdb
 C:\git\Backend_DOTNETCore\curso\curso.api\obj\Debug\net5.0\curso.api.genruntimeconfig.cache
 C:\git\Backend_DOTNETCore\curso\curso.api\bin\Debug\net5.0\curso.api.xml
+C:\git\Backend_DOTNETCore\curso\curso.api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Annotations.dll
