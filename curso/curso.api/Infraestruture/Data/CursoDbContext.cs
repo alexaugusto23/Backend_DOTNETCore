@@ -1,4 +1,5 @@
-﻿using curso.api.Infraestruture.Data.Mappings;
+﻿using curso.api.Business.Entities;
+using curso.api.Infraestruture.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace curso.api.Infraestruture.Data
@@ -16,5 +17,7 @@ namespace curso.api.Infraestruture.Data
             modelBuilder.ApplyConfiguration(new UsuarioMapping());
             base.OnModelCreating(modelBuilder);
         }
+
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }
