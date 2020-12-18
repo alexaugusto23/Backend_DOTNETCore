@@ -9,7 +9,7 @@ namespace curso.api.Configurations
         public CursoDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<CursoDbContext>();
-            optionsBuilder.UseSqlServer("Data Source=ALEX;Initial Catalog=Curso_mvc;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=ALEX;Initial Catalog=CURSO_BACKEND;Integrated Security=True");
             CursoDbContext contexto = new CursoDbContext(optionsBuilder.Options);
             return contexto;
         }

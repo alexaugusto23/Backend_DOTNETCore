@@ -1,6 +1,11 @@
-﻿namespace curso.api.Business.Repositories
+﻿using curso.api.Business.Entities;
+
+namespace curso.api.Business.Repositories
 {
-    interface IUsuarioRepository
+    public interface IUsuarioRepository 
     {
+        void Adicionar(Usuario usuario);
+        void Commit();
+        Usuario ObterUsuario(string login);
     }
 }
